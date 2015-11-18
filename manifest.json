@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "short_name": "Focus",
+  "name": "Focus by Cabana Labs",
+  "description": "Focus breaks bad habits by taking you to a beautiful page whenever you type in your favorite distracting websites.",
+  "version": "0.0.2",
+  "options_page": "/data/options.html",
+
+  "browser_action": {
+    "default_icon": "/data/focus-32.png",
+    "default_popup": "/data/panel.html"
+  },
+  "background": {
+    "scripts": ["data/main.js"]
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://ajax.googleapis.com/",
+    "webRequest",
+    "webRequestBlocking",
+    "*://*/*"
+  ]
+}

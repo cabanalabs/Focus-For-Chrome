@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="options.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Focus by <a href="http://www.cabanalabs.com">Cabana Labs</a></h1>
+    </div>
+    <div class="buttons">
+      <button id="saveButton" name="saveButton" class="button">Save Options</button>
+      <button id="undoButton" name="undoButton" class="button">Undo</button>
+    </div>
+    <h3>To turn on Office Hours, make sure the 'Set office hours?' is checked, the start and end times are set, and you've selected one or more days of the week.</h3>
+    <div class="options">
+      <input id="officeHours" name="officeHours" type="checkbox" />
+      <label for="officeHours">Set office hours?</label>
+      <div class="description" />Turning on office hours will let you limit your breaks to around 10 minutes each time you switch the plugin Off during office hours.</div>
+
+      <label for="startTime" class="input">Office hours start time:</label>
+      <input id="startTime" name="startTime" type="text" placeholder="08:30"/>
+      <div class="description">Set start time between 00:00 and 23:59</div>
+
+      <label for="stopTime" class="input">Office hours end time:</label>
+      <input id="stopTime" name="stopTime" type="text" placeholder="17:30"/>
+      <div class="description">Set stop time between 00:00 and 23:59</div>
+
+      <input id="workDay[1]" name="workDay[1]" type="checkbox" />
+      <label for="workDay[1]">Monday is a work day</label>
+      <div class="description">Turn on office hours for Monday</div>
+
+      <input id="workDay[2]" name="workDay[2]" type="checkbox" />
+      <label for="workDay[2]">Tuesday is a work day</label>
+      <div class="description">Turn on office hours for Tuesday</div>
+
+      <input id="workDay[3]" name="workDay[3]" type="checkbox" />
+      <label for="workDay[3]">Wednesday is a work day</label>
+      <div class="description">Turn on office hours for Wednesday</div>
+
+      <input id="workDay[4]" name="workDay[4]" type="checkbox" />
+      <label for="workDay[4]">Thursday is a work day</label>
+      <div class="description">Turn on office hours for Thursday</div>
+
+      <input id="workDay[5]" name="workDay[5]" type="checkbox" />
+      <label for="workDay[5]">Friday is a work day</label>
+      <div class="description">Turn on office hours for Friday</div>
+
+      <input id="workDay[6]" name="workDay[6]" type="checkbox" />
+      <label for="workDay[6]">Saturday is a work day</label>
+      <div class="description">Turn on office hours for Saturday</div>
+      
+      <input id="workDay[0]" name="workDay[7]" type="checkbox" />
+      <label for="workDay[0]">Sunday is a work day</label>
+      <div class="description">Turn on office hours for Sunday</div>
+    </div>
+    <script type="text/javascript" src="options.js"></script>
+  </body>
+</html>
