@@ -1,10 +1,3 @@
-/*
-  officeHours
-  startTime
-  stopTime
-  workDay[0 - 6]
-*/
-
 var element = function(id) {
   return document.getElementById(id);
 }
@@ -42,6 +35,8 @@ saveButton.onclick = function() {
     'workDay[5]' : element('workDay[5]').checked,
     'workDay[6]' : element('workDay[6]').checked,
     'workDay[0]' : element('workDay[0]').checked
+  }, function() {
+    // Saved!
   });
 };
 
