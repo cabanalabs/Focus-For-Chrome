@@ -90,7 +90,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace) {
 // Detect request
 var callback = function(details) {
   // Redirect to Cabana Labs 
-  if ((pluginState === 'OFF') &&
+  if ((pluginState === 'ON') &&
      (details.type === 'main_frame')) {
     var requestURL = details.url.toLowerCase();
     for (var counter=0; counter < blockList.length; counter++) {
