@@ -64,3 +64,7 @@ div.description {
   margin-top: 3px;
   margin-left: 25px;
 }
+
+#defaultWebsite {
+  width: 350px;
+}

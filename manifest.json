@@ -4,7 +4,7 @@
   "short_name": "Focus",
   "name": "Focus by Cabana Labs",
   "description": "Focus breaks bad habits by taking you to a beautiful page whenever you type in your favorite distracting websites.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "options_page": "/data/options.html",
 
   "browser_action": {

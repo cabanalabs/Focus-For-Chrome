@@ -2,6 +2,7 @@ var offTime = new Date();
 var rawBlocklist = '';
 var blockList = '';
 var pluginState = 'ON';
+var defaultWebsite = 'http://focus.cabanalabs.com/';
 
 // Setup Office Hours
 var officeHoursChecker = {
@@ -63,9 +64,11 @@ chrome.alarms.onAlarm.addListener(function(alarm) {
 
 // Reload state
 var reloadState = function() {
-  chrome.storage.local.get(['pluginState', 'rawBlockList', 'officeHours', 'startTime', 'stopTime'], function(result) {
+  chrome.storage.local.get(['pluginState', 'rawBlockList', 'defaultWebsite', 'officeHours', 'startTime', 'stopTime'], function(result) {
     pluginState = result.pluginState || 'ON';
     rawBlockList = result.rawBlockList || '';
+    defaultWebsite = result.defaultWebsite;
+    defaultWebsite = (defaultWebsite == '') ? 'http://focus.cabanalabs.com/' : defaultWebsite;
     blockList = rawBlockList.toLowerCase().replace(/^#.*\n$/g, "").split("\n");
 
     // Set icon to bike or cocktail
@@ -96,7 +99,7 @@ var callback = function(details) {
     for (var counter=0; counter < blockList.length; counter++) {
       var listItem = blockList[counter].trim();
       if (listItem != '' && requestURL.indexOf(listItem) > -1) {
-        return {redirectUrl: 'http://focus.cabanalabs.com/'}; 
+        return {redirectUrl: defaultWebsite}; 
       }
     }
   }

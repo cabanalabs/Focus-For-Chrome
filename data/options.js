@@ -4,11 +4,12 @@ var element = function(id) {
 
 var reloadPluginOptions = function() {
   chrome.storage.local.get([
-    'officeHours', 'startTime', 'stopTime',
+    'defaultWebsite', 'officeHours', 'startTime', 'stopTime',
     'workDay[0]', 'workDay[1]', 'workDay[2]',
     'workDay[3]', 'workDay[4]', 'workDay[4]',
     'workDay[5]', 'workDay[6]'], function(result) {
     
+    element('defaultWebsite').value = result.defaultWebsite || 'http://focus.cabanalabs.com/';
     element('officeHours').checked = result.officeHours || false;
     element('startTime').value = result.startTime || '';
     element('stopTime').value = result.stopTime || '';
@@ -24,7 +25,10 @@ var reloadPluginOptions = function() {
 };
 
 saveButton.onclick = function() {
+  var defaultWebsite = element('defaultWebsite').value;
+  defaultWebsite = (defaultWebsite.trim() == '') ? 'http://focus.cabanalabs.com/' : defaultWebsite;
   chrome.storage.local.set({
+    'defaultWebsite': defaultWebsite,
     'officeHours': element('officeHours').checked,
     'startTime'  : element('startTime').value,
     'stopTime'   : element('stopTime').value,
